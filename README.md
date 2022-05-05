@@ -1,12 +1,49 @@
-## HASH JS
+## JOGO DA VELHA APP
+<br>
 
-Projeto de um jogo da velha feitos com html, sass e javaScript.
+<p align="center">
+    <img
+        src=".github/preview.png"
+        alt="Preview da página inicial do site">
+</p>
+<br>
 
-#### SASS
-sass src/sass/style.scss assets/css/style.css --style compressed --no-source-map
-sass --watch src/sass/style.scss:assets/css/style.css --style compressed --no-source-map
+## 🚧 Description
 
-#### Autor - Matheus Ramalho
-Vamos trocar uma ideia!
+Projeto de um jogo da velha feito com html, sass e javaScript.
 
-[![MR Badge](https://img.shields.io/badge/MR-matheusramalho.dev-B5838D?style=flat-square&labelColor=E5989B&logo=MR&logoColor=white&link=https://matheusramalho.dev)](https://matheusramalho.dev)
+<br>
+
+## 🚀 Technologies
+
+This project was developed using the following technologies:
+
+- [HTML / CSS / JS](https://developer.mozilla.org/)
+- [SASS](https://sass-lang.com/)
+
+Run this command to install the dependencies.
+
+```
+sass src/sass/app.scss assets/css/app.css --style compressed --no-source-map
+sass --watch src/sass/app.scss:assets/css/app.css --style compressed --no-source-map
+```
+
+<br>
+
+## 🔖 Layout
+
+You can view the project through the links below:
+
+- [Live Preview](https://clockjs-mat.vercel.app/)
+
+<br>
+
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+<br>
+
+---
+
+Made with 💜 by [matheuramalho](https://www.matheusramalho.dev) ✌🏻
