@@ -34,7 +34,7 @@ sass --watch src/css/app.scss:assets/css/app.css --style compressed --no-source-
 
 You can view the project through the links below:
 
-- [Live Preview](https://clockjs-mat.vercel.app/)
+- [Live Preview](https://hashjs-mat.vercel.app/)
 
 <br>
 
