@@ -1,0 +1,140 @@
+@use '../abstracts/fonts'as font;
+@use '../abstracts/colors'as color;
+@use '../abstracts/spaces'as space;
+@use '../abstracts/borders'as border;
+
+.clock__analog {
+    position: relative;
+
+    width: 31.25rem;
+    height: 31.25rem;
+    border-radius: border.$radiiFull;
+    border: 0.313rem solid color.$colorsBlack2;
+    background-color: color.$colorsBlack1;
+    background-image: url("../../assets/images/clock.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 -0.5rem 0.5rem rgba(255, 255, 255, 0.05),
+        inset 0 -0.5rem 0.5rem rgba(255, 255, 255, 0.05),
+        0 0.5rem 0.5rem rgba(0, 0, 0, 0.3),
+        inset 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        z-index: 5;
+        position: absolute;
+
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: border.$radiiFull;
+        background-color: color.$colorsWhite;
+    }
+
+    .clock__pointer__hour,
+    .clock__pointer__minute,
+    .clock__pointer__second {
+        position: absolute;
+
+        width: 1.25rem;
+        border-radius: border.$radiiSM;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .clock__pointer__hour::before,
+    .clock__pointer__minute::before,
+    .clock__pointer__second::before {
+        content: '';
+        position: absolute;
+
+        border-radius: border.$radiiSM;
+    }
+
+    .clock__pointer__hour {
+        height: 11.25rem;
+
+        &::before {
+            z-index: 2;
+
+            width: 0.5rem;
+            height: 6.25rem;
+            background-color: color.$colorsYellow2;
+        }
+    }
+
+    .clock__pointer__minute {
+        height: 16.25rem;
+
+        &::before {
+            z-index: 3;
+
+            width: 0.375rem;
+            height: 8.75rem;
+            background-color: color.$colorsYellow1;
+        }
+    }
+
+    .clock__pointer__second {
+        height: 21.25rem;
+
+        &::before {
+            z-index: 4;
+
+            width: 0.25rem;
+            height: 14.375rem;
+            background-color: color.$colorsYellow0;
+        }
+    }
+}
+
+.clock__digital {
+    width: 10.625rem;
+    height: 4.375rem;
+    margin-top: space.$space24;
+    border-radius: border.$radiiLG;
+    background-color: color.$colorsBlack1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: font.$fsXL;
+    font-weight: font.$fwExtraBold;
+    color: color.$colorsWhite;
+}
+
+@media(max-width: 600px) {
+    .clock__analog {
+        width: 18.75rem;
+        height: 18.75rem;
+
+        .clock__pointer__hour {
+            height: 8.25rem;
+
+            &::before {
+                height: 4.25rem;
+            }
+        }
+
+        .clock__pointer__minute {
+            height: 11.25rem;
+
+            &::before {
+                height: 5.75rem;
+            }
+        }
+
+        .clock__pointer__second {
+            height: 12.25rem;
+
+            &::before {
+                height: 8.375rem;
+            }
+        }
+    }
+}

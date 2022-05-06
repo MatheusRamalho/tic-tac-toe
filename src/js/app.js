@@ -80,7 +80,6 @@ const handleIsFull = () => {
 
 // Função para ver quem venceu...
 const handleCheckWinnerFor = (player) => {
-    console.log(player);
     // Array de possibilidades de vitórias.
     let possibilities = [
         // Horizontal
@@ -117,17 +116,14 @@ const handleCheckWinnerFor = (player) => {
 // Função que verifica o resultado da partida...
 const handleCheckGame = () => {
     if (handleCheckWinnerFor('x')) { // Chama a função para ver se o X venceu.
-        console.log('xxxxxxxxx');
         warning = '"X" venceu!'; // Envia aviso de vencedor pro html.
         playing = false; // Impede que o jogo continue.
 
     } else if (handleCheckWinnerFor('o')) { // Chama a função para ver se o O venceu.
-        console.log('oooooooo');
         warning = '"O" venceu!'; // Envia aviso de vencedor pro html.
         playing = false; // Impede que o jogo continue.
 
     } else if (handleIsFull()) { // Chama a função que verifica se deu empate.
-        console.log('vvvvvvvvv');
         warning = 'Deu velha!'; // Envia aviso que deu empate.
         playing = false; // Impede que o jogo continue.
 

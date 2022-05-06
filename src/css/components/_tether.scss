@@ -1,0 +1,110 @@
+@use '../abstracts/fonts'as font;
+@use '../abstracts/colors'as color;
+@use '../abstracts/spacings'as space;
+@use '../abstracts/borders'as border;
+
+.tether__title {
+    text-align: center;
+
+    h1 {
+        font-size: font.$fs-2xl;
+    }
+
+    h6 {
+        font-size: font.$fs-lg;
+    }
+}
+
+.tether__board {
+    width: 18.75rem;
+    margin-top: space.$space-32;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .tether__item {
+        cursor: pointer;
+        width: 6.25rem;
+        height: 6.25rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: font.$fs-4xl;
+        font-weight: font.$fw-bold;
+        color: color.$color-white;
+
+        &:hover {
+            background-color: color.$color-secondary;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(4),
+        &:nth-child(5) {
+            border-right: border.$bw-heavy solid color.$color-black-50;
+            border-bottom: border.$bw-heavy solid color.$color-black-50;
+        }
+
+        &:nth-child(3),
+        &:nth-child(6) {
+            border-bottom: border.$bw-heavy solid color.$color-black-50;
+        }
+
+        &:nth-child(7),
+        &:nth-child(8) {
+            border-right: border.$bw-heavy solid color.$color-black-50;
+        }
+    }
+}
+
+.tether__info {
+    width: 18.75rem;
+    margin: space.$space-32 0;
+    padding: space.$space-8;
+    border-radius: border.$radii-lg;
+    border: border.$bw-thin solid color.$color-black-50;
+    background-color: color.$color-black-50;
+
+    display: flex;
+
+    .tether__info__item {
+        flex: 1;
+
+        .tether__info__title {
+            margin-bottom: space.$space-8;
+
+            text-align: center;
+        }
+
+        .tether__info__content {
+            font-weight: font.$fw-medium;
+            color: color.$color-tertiary;
+            text-align: center;
+
+            &.turn__ {
+                color: color.$color-white;
+            }
+        }
+    }
+}
+
+.tether__reset {
+    cursor: pointer;
+
+    width: fit-content;
+    height: auto;
+    padding: space.$space-16 space.$space-24;
+    border: none;
+    border-radius: border.$radii-lg;
+    background-color: color.$color-primary;
+    transition: 1s background ease-in-out;
+
+    font-weight: font.$fw-bold;
+    color: color.$color-black-50;
+
+    &:hover {
+        background-color: color.$color-tertiary;
+    }
+}
