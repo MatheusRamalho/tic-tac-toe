@@ -28,11 +28,14 @@ export const App = () => {
 
 	const renderMoveOnFrame = () => {
 		for (let i in tether) {
-			let item = document.querySelector(`.tether__item[data-item=${i}]`);
-			item.innerHTML = tether[i];
+			let item = document.querySelector(`.tether-item[data-item=${i}]`);
+
+			if (item) {
+				item.innerHTML = tether[i];
+			}
 		}
 
-		checkIfWinnerInTheGame(); // Chama a função para verificar o resultado do jogo.
+		checkIfWinnerInTheGame();
 	}
 
 	const checkIfWinnerInTheGame = () => {
@@ -62,8 +65,7 @@ export const App = () => {
 	}
 
 	const checkWinnerForThePlayer = ({ player }: PlayerProps) => {
-		// Array de possibilidades de vitórias.
-		let possibilities = [
+		let possibilities = [ // Array de possibilidades de vitórias.
 			// Horizontal
 			'a1,a2,a3',
 			'b1,b2,b3',
@@ -94,7 +96,7 @@ export const App = () => {
 		if (playing && tether[item] === '') {
 			tether[item] = playerTurn;
 
-			renderMoveOnFrame(); // Chama a função para escrever a jogada na tela.
+			renderMoveOnFrame();
 			setPlayerTurn(playerTurn === 'x' ? 'o' : 'x');
 		}
 	}

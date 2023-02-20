@@ -8,7 +8,7 @@ export interface TetherScoreboardProps {
 export const TetherScoreboardWrapper = styled.div`
     width: 18.75rem;
     height: auto;
-    margin: 2.5rem 0;
+    margin: 1rem 0;
     padding: 1.5rem;
     border-radius: 0.7rem;
     background-color: var(--primary300);
